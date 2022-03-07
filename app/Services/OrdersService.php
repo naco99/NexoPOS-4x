@@ -872,6 +872,8 @@ class OrdersService
             return PaymentType::active()->get()->toArray();
         });
 
+		$allowedPaymentsGateways = collect($allowedPaymentsGateways)->keyBy('identifier')->toArray();
+		
         if ( ! empty( $fields[ 'payments' ] ) ) {
             foreach ( $fields[ 'payments' ] as $payment) {
                 

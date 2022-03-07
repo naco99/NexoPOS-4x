@@ -40,3 +40,8 @@ storage/module.zip
 tests/database.sqlite
 tests/database.sqlite-journal
 storage/snapshots/*.sql
+
+.idea
+_ide_helper.php
+_*.txt
+storage/debugbar

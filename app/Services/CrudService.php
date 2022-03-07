@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Exceptions\NotAllowedException;
 use App\Exceptions\NotEnoughPermissionException;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -805,14 +806,18 @@ class CrudService
             'queryParams'   =>  []
         ], $config ) );
     }
-
-    /**
-     * Will render a form UI
-     * @param Model|null reference passed
-     * @param array custom configuration
-     */
-    public static function form( $entry = null, $config = [] )
-    {
+	
+	/**
+	 * Will render a form UI
+	 * @param Model|null reference passed
+	 * @param array custom configuration
+	 * @return \Illuminate\Contracts\View\View
+	 * @throws NotAllowedException
+	 * @throws NotEnoughPermissionException
+	 * @throws Exception
+	 */
+    public static function form( $entry = null, $config = [] ): \Illuminate\Contracts\View\View
+	{
         $className          =   get_called_class();
         $instance           =   new $className;
         $permissionType     =   $entry === null ? 'create' : 'update';

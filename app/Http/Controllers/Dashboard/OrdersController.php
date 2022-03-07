@@ -86,10 +86,10 @@ class OrdersController extends DashboardController
 
     public function listOrders()
     {
-        Hook::addFilter( 
-            'ns-crud-footer', 
+        Hook::addFilter(
+            'ns-crud-footer',
             fn( Output $output ) => $output
-                ->addView( 'pages.dashboard.orders.footer' ) 
+                ->addView( 'pages.dashboard.orders.footer' )
         );
 
         return OrderCrud::table();
@@ -97,7 +97,7 @@ class OrdersController extends DashboardController
 
     public function getPOSOrder( $order_id )
     {
-        return $this->ordersService->getOrder( $order_id );        
+        return $this->ordersService->getOrder( $order_id );
     }
 
     /**
@@ -135,7 +135,7 @@ class OrdersController extends DashboardController
         if ( request()->query( 'limit' ) ) {
             return Order::limit( request()->query( 'limit' ) )
                 ->get();
-        } 
+        }
 
         return Order::with( 'customer' )->get();
     }
@@ -293,10 +293,10 @@ class OrdersController extends DashboardController
 
     public function updateInstalment( Order $order, OrderInstalment $instalment, Request $request )
     {
-        return $this->ordersService->updateInstalment( 
-            $order, 
-            $instalment, 
-            $request->input( 'instalment' ) 
+        return $this->ordersService->updateInstalment(
+            $order,
+            $instalment,
+            $request->input( 'instalment' )
         );
     }
 
