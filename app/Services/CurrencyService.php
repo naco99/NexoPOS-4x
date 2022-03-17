@@ -42,8 +42,16 @@ class CurrencyService
     {
         return app()->make( CurrencyService::class )->value( $amount );
     }
-
-    /**
+	
+	/**
+	 * @return string
+	 */
+	public function getCurrencySymbol(): string
+	{
+		return $this->currency_symbol;
+	}
+	
+	/**
      * Define an amount to work on
      * @param string
      * @return CurrencyService

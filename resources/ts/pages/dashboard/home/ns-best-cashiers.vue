@@ -51,7 +51,7 @@ export default {
     },
     mounted() {
         this.hasLoaded      =   false;
-        this.subscription    =   Dashboard.bestCashiers.subscribe( cashiers => {
+        this.subscription   =   Dashboard.bestCashiers.subscribe( cashiers => {
             this.hasLoaded  =   true;
             this.cashiers   =   cashiers;
         });

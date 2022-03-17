@@ -1,7 +1,6 @@
 <?php
 
 use App\Events\BeforeStartWebRouteEvent;
-
 use Illuminate\Support\Facades\Route;
 
 /*

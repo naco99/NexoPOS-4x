@@ -59,9 +59,9 @@ use App\Classes\Hook;
 
         #receipt {
             /* box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5); */
-            padding: 2mm;
+            padding: 0.1mm;
             margin: 0 auto;
-            width: 80mm;
+            width: 88mm;
             background: #FFF;
             font-family: "Futura";
             font-size: 2.2mm;
@@ -98,8 +98,8 @@ use App\Classes\Hook;
         }
 
         .order_content {
-            padding: 10px;
-            font-size: 1.4em;
+            margin-top: 5mm;
+            font-size: 1.8em;
         }
 
         .order_content .item {
@@ -109,11 +109,23 @@ use App\Classes\Hook;
             padding-bottom: 10px;
         }
 
+        .order_content .item .name{
+			flex-grow: 2;
+		}
+
         .order_content .item .unit {
             padding-left: 4px;
             color: rgb(118, 118, 118)
         }
 
+        .order_content .item .text-xs{
+            font-size: 0.5em;
+        }
+
+        .order_content .item .text-sm{
+            font-size: 0.8em;
+        }
+		
         .summary, .payment {
             display: flex;
             flex-direction: column;
